@@ -2,7 +2,7 @@
 
 namespace App\Timezones;
 
-class TimezoneCanada
+class TimezoneUSA
 {
     public function select(): mixed
     {
