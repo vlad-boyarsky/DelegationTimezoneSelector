@@ -2,10 +2,10 @@
 
 namespace App\Timezones;
 
-class TimezoneCanada
+class TimezoneUkraine
 {
     public function select(): string
     {
-        return '16:36' . ' - Canada';
+        return '23:36' . ' - Ukraine';
     }
 }

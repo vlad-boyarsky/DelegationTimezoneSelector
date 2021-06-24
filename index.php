@@ -7,10 +7,6 @@ require __DIR__ . '/vendor/autoload.php';
 
 $timezoneCore = new TimezoneCore;
 
-$timezoneCore->selectTimezoneUSA()->setTimezoneName('USA');
+echo $timezoneCore->selectTimezoneCanada() . '</br>';
 
-var_dump($timezoneCore);
-
-$timezoneCore->selectTimezoneCanada()->setTimezoneName('Canada');
-
-var_dump($timezoneCore);
+echo $timezoneCore->selectTimezoneUkraine();

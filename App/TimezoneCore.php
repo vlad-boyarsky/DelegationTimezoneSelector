@@ -4,29 +4,29 @@ namespace App;
 
 use App\Timezones\Interfaces\TimezoneInterface;
 use App\Timezones\TimezoneCanada;
-use App\Timezones\TimezoneUSA;
+use App\Timezones\TimezoneUkraine;
 
 class TimezoneCore implements TimezoneInterface
 {
 
     private $timezoneSelection;
 
-    public function setTimezoneName($timezone): TimezoneInterface
+    public function setTimezoneName($timezone): string
     {
-        return $timezone;
+        return $this->timezoneSelection->setTimezoneName($timezone);
     }
 
-    public function selectTimezoneUSA(): TimezoneCore
+    public function selectTimezoneUkraine(): string
     {
-        $this->timezoneSelection = new TimezoneUSA;
+        $this->timezoneSelection = new TimezoneUkraine;
 
-        return $this;
+        return $this->timezoneSelection->select();
     }
 
-    public function selectTimezoneCanada(): TimezoneCore
+    public function selectTimezoneCanada(): string
     {
         $this->timezoneSelection = new TimezoneCanada;
 
-        return $this;
+        return $this->timezoneSelection->select();
     }
 }
