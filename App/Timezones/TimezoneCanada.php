@@ -13,6 +13,9 @@ class TimezoneCanada implements TimezoneInterfaceAlias
 
     public function time($timezone): string
     {
-        return $this->create($timezone) .' ' . date("Y-m-d H:i:s");
+        date_default_timezone_set('America/Toronto');
+        $date= date('Y-m-d:h-m-s') ;
+
+        return $this->create($timezone) .' ' . $date;
     }
 }

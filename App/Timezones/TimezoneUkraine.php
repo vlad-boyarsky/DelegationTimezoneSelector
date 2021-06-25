@@ -13,6 +13,9 @@ class TimezoneUkraine implements TimezoneInterface
 
     public function time($timezone): string
     {
-        return $this->create($timezone) .' ' . time();
+        date_default_timezone_set('Europe/Kiev');
+        $date= date('Y-m-d:h-m-s') ;
+
+        return $this->create($timezone) .' ' . $date;
     }
 }
