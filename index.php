@@ -7,6 +7,13 @@ require __DIR__ . '/vendor/autoload.php';
 
 $timezoneCore = new TimezoneCore;
 
-echo $timezoneCore->selectTimezoneCanada() . '</br>';
+echo $timezoneCore->create('Canada ');
+echo $timezoneCore->time('Canada');
 
-echo $timezoneCore->selectTimezoneUkraine();
+echo '</br>';
+
+$timezoneCore->selectTimezoneCanada();
+echo $timezoneCore->create('Ukraine ');
+echo $timezoneCore->time('Ukraine');
+
+

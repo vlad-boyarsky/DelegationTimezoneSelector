@@ -5,5 +5,7 @@ namespace App\Timezones\Interfaces;
 
 interface TimezoneInterface
 {
-    public function setTimezoneName($timezone): string;
+    public function create($timezone): string;
+
+    public function time($timezone): string;
 }

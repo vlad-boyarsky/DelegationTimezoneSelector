@@ -2,10 +2,17 @@
 
 namespace App\Timezones;
 
-class TimezoneCanada
+use App\Timezones\Interfaces\TimezoneInterface as TimezoneInterfaceAlias;
+
+class TimezoneCanada implements TimezoneInterfaceAlias
 {
-    public function select(): string
+    public function create($timezone): string
     {
-        return '16:36' . ' - Canada';
+        return $timezone;
+    }
+
+    public function time($timezone): string
+    {
+        return $this->create($timezone) .' ' . date("Y-m-d H:i:s");
     }
 }

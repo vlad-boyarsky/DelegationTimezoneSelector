@@ -2,10 +2,17 @@
 
 namespace App\Timezones;
 
-class TimezoneUkraine
+use App\Timezones\Interfaces\TimezoneInterface;
+
+class TimezoneUkraine implements TimezoneInterface
 {
-    public function select(): string
+    public function create($timezone): string
     {
-        return '23:36' . ' - Ukraine';
+        return $timezone;
+    }
+
+    public function time($timezone): string
+    {
+        return $this->create($timezone) .' ' . time();
     }
 }

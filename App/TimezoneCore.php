@@ -11,22 +11,28 @@ class TimezoneCore implements TimezoneInterface
 
     private $timezoneSelection;
 
-    public function setTimezoneName($timezone): string
-    {
-        return $this->timezoneSelection->setTimezoneName($timezone);
-    }
-
-    public function selectTimezoneUkraine(): string
+    public function __construct()
     {
         $this->timezoneSelection = new TimezoneUkraine;
-
-        return $this->timezoneSelection->select();
     }
 
-    public function selectTimezoneCanada(): string
+    public function selectTimezoneUkraine(): void
+    {
+        $this->timezoneSelection = new TimezoneUkraine;
+    }
+
+    public function selectTimezoneCanada(): void
     {
         $this->timezoneSelection = new TimezoneCanada;
+    }
 
-        return $this->timezoneSelection->select();
+    public function create($timezone): string
+    {
+        return $this->timezoneSelection->create($timezone);
+    }
+
+    public function time($timezone): string
+    {
+        return $this->timezoneSelection->time($timezone);
     }
 }
